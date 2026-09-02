@@ -13,11 +13,11 @@ class TreatmentNode {
     public TreatmentNode(String treatment){
 
         this.treatment = treatment;
-        this.next = null;
 
     }
 
 }
+
 
 
 
@@ -29,7 +29,8 @@ public class TreatmentStack {
 
 
 
-    // Add treatment record
+
+    // Push
 
     public void push(String treatment){
 
@@ -44,12 +45,98 @@ public class TreatmentStack {
         top = newNode;
 
 
-
         System.out.println(
-        "Treatment record added");
+        "Treatment added");
 
 
     }
+
+
+
+
+
+
+    // Remove latest treatment
+
+    public void pop(){
+
+
+
+        if(top == null){
+
+
+            System.out.println(
+            "Stack is empty");
+
+
+            return;
+
+        }
+
+
+
+        System.out.println(
+        "Removed Treatment: "
+        + top.treatment);
+
+
+
+        top = top.next;
+
+
+
+    }
+
+
+
+
+
+
+
+
+    // Display treatments
+
+    public void displayStack(){
+
+
+
+        if(top == null){
+
+            System.out.println(
+            "No treatment history");
+
+
+            return;
+
+        }
+
+
+
+        TreatmentNode current = top;
+
+
+
+        System.out.println(
+        "Treatment History");
+
+
+
+        while(current != null){
+
+
+            System.out.println(
+            current.treatment);
+
+
+
+            current = current.next;
+
+
+        }
+
+
+    }
+
 
 
 }
