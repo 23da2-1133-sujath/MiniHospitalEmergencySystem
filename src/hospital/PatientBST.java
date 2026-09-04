@@ -151,7 +151,7 @@ public class PatientBST {
     public void delete(int id){
 
         root = deleteNode(root,id);
-
+        System.out.println("Patient Delete Successfully");
     }
 
 

@@ -161,6 +161,8 @@ case 6:
 
 queue.dequeue();
 
+
+
 break;
 
 
@@ -198,21 +200,36 @@ break;
 
 case 9:
 
+    System.out.println("\n===== Add Patient Visit =====");
 
-System.out.println("Enter Visit Details");
+    System.out.print("Enter Visit ID: ");
+    int visitID = sc.nextInt();
 
+    sc.nextLine(); // clear input buffer
 
-visits.addVisit(
-new Visit(
-1,
-"2026-09-02",
-"Doctor A",
-"Fever",
-"Medicine"
-));
+    System.out.print("Enter Visit Date: ");
+    String visitDate = sc.nextLine();
 
+    System.out.print("Enter Doctor Name: ");
+    String doctorName = sc.nextLine();
 
-break;
+    System.out.print("Enter Diagnosis: ");
+    String diagnosis = sc.nextLine();
+
+    System.out.print("Enter Treatment: ");
+    String treatment = sc.nextLine();
+
+    Visit visit = new Visit(
+            visitID,
+            visitDate,
+            doctorName,
+            diagnosis,
+            treatment
+    );
+
+    visits.addVisit(visit);
+
+    break;
 
 
 
